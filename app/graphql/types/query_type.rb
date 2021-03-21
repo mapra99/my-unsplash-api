@@ -7,11 +7,10 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    field :all_posts, [Types::PostType], null: false, description: "All posts"
+
+    def all_posts
+      Post.all
     end
   end
 end
