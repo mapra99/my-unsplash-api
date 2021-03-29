@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  namespace :api do
+    scope module: 'v1', path: 'v1' do
+      resources :direct_uploads, only: [:create]
+    end
+  end
 end
