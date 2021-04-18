@@ -6,11 +6,6 @@ module Types
 
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
-
-    field :all_posts, [Types::PostType], null: false, description: "All posts"
-
-    def all_posts
-      Post.all
-    end
+    field :fetch_posts, resolver: Queries::Posts::Fetch
   end
 end
