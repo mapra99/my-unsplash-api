@@ -22,4 +22,11 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
         methods: [:get, :post, :put, :patch, :delete, :options, :head]
     end
   end
+
+  allow do
+    origins '\Ahttps?:\/\/(deploy-preview-.*)?my-unsplashh.netlify.app\z'
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
 end
