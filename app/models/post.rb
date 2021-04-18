@@ -10,6 +10,8 @@ class Post < ApplicationRecord
   end
 
   def image_url
-    image.attached? ? image.service_url : ''
+    return '' unless image.attached?
+
+    image.service_url
   end
 end
