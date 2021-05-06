@@ -43,3 +43,4 @@ jobs:
           RAILS_ENV: test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+          SKIP_SOME_SPECS: true
