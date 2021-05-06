@@ -1,4 +1,4 @@
-name: Ruby Workflow
+name: RSpec workflow
 on: [pull_request]
 jobs:
   test:
