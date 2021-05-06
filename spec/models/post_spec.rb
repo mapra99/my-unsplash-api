@@ -11,7 +11,7 @@ RSpec.describe Post, type: :model do
     it { should validate_presence_of(:title) }
   end
 
-  describe '#image_url' do
+  describe '#image_url', skip_gh_actions: true do
     it 'returns a URL for the image' do
       image_url = subject.image_url
       expect(image_url).not_to be_empty
