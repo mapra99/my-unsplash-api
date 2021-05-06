@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   context 'associations' do
-    it { should have_one_attached(:image) }
+    example('image attachment', skip_gh_actions: true) do
+      should have_one_attached(:image)
+    end
   end
 
   context 'validations' do
