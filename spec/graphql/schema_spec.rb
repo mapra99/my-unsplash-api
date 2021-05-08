@@ -9,7 +9,7 @@ RSpec.describe 'GraphQL Schema' do
       expect(subject).to match(snapshot_definition)
     end
 
-    # implement this after pushing a first schema snapshot. https://github.com/xuorig/graphql-schema_comparator
+    # TODO: https://github.com/xuorig/graphql-schema_comparator
     xit "shouldn't involve breaking changes with current deployed branch schema"
   end
 end
