@@ -34,6 +34,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rubocop', '~> 1.13.0'
   gem 'faker', '~> 2.17.0'
+  gem 'dotenv-rails'
 end
 
 group :development do

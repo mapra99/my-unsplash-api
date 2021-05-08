@@ -44,3 +44,4 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           SKIP_SOME_SPECS: true
+          HOST_URL: http://localhost:3001/
