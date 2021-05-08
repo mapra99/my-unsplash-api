@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  include ActiveStorage::SetCurrentOnModel
   include Paginable
 
   has_one_attached :image
