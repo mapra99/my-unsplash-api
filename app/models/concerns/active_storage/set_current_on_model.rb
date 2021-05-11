@@ -4,7 +4,7 @@ module ActiveStorage::SetCurrentOnModel
 
   included do
     after_initialize do
-      ActiveStorage::Current.host = ENV.fetch('HOST_URL')
+      ActiveStorage::Current.host = ENV['HOST_URL']
     end
   end
 end
