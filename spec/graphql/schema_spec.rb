@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'GraphQL Schema' do
   context 'dump snapshot' do
-    subject { MyUnsplashApiSchema.to_definition }
+    subject { OurMemoriesApiSchema.to_definition }
     let(:snapshot_definition) { File.read(Rails.root.join("app/graphql/schema.graphql")) }
 
     it 'should equal the current schema definition' do

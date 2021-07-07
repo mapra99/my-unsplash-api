@@ -20,7 +20,7 @@ RSpec.describe 'GraphQL Mutations::Posts::Create' do
     end
 
     subject do
-      MyUnsplashApiSchema.execute(mutation_string,
+      OurMemoriesApiSchema.execute(mutation_string,
                                   variables: { createPostInput: { title: title,
                                                                   signedBlobId: signed_blob_id } })
     end

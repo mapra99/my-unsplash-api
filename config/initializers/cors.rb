@@ -24,9 +24,18 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins /\Ahttps?:\/\/(deploy-preview-.*)?my-unsplashh\.netlify\.app\z/
+    origins /\Ahttps?:\/\/(deploy-preview-.*)?our-memories-main\.netlify\.app\z/
     resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+
+  if Rails.env.production?
+    allow do
+      origins ENV.fetch('FRONTEND_APP_URL')
+      resource '*',
+        headers: :any,
+        methods: [:get, :post, :put, :patch, :delete, :options, :head]
+    end
   end
 end
