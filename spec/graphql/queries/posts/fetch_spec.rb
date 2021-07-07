@@ -16,7 +16,7 @@ RSpec.describe 'GraphQL Queries::Posts::Fetch' do
       GRAPHQL
     end
 
-    subject { MyUnsplashApiSchema.execute(query_string) }
+    subject { OurMemoriesApiSchema.execute(query_string) }
     it_should_behave_like 'valid graphql response'
 
     describe 'payload' do
@@ -50,7 +50,7 @@ RSpec.describe 'GraphQL Queries::Posts::Fetch' do
       GRAPHQL
     end
 
-    subject { MyUnsplashApiSchema.execute(query_string, variables: {limit: limit, offset: offset}) }
+    subject { OurMemoriesApiSchema.execute(query_string, variables: {limit: limit, offset: offset}) }
     it_should_behave_like 'valid graphql response'
 
     describe 'payload' do

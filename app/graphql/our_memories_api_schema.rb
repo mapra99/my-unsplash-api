@@ -1,4 +1,4 @@
-class MyUnsplashApiSchema < GraphQL::Schema
+class OurMemoriesApiSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
