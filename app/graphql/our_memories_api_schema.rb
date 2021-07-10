@@ -1,4 +1,27 @@
 class OurMemoriesApiSchema < GraphQL::Schema
+  use GraphqlDevise::SchemaPlugin.new(
+    query:            Types::QueryType,
+    mutation:         Types::MutationType,
+    authenticate_default: false,
+    resource_loaders: [
+      GraphqlDevise::ResourceLoader.new(
+        User,
+        skip: [
+          :sign_up, # deprecated
+          :update_password, # deprecated
+          :send_password_reset, # deprecated
+          :resend_confirmation, # deprecated
+          :confirm_account, # deprecated
+          :check_password_token, # deprecated
+          :confirm_registration_with_token, # devise confirmable module won't be used for now
+          :resend_confirmation_with_token # devise confirmable module won't be used for now
+        ],
+        operations: {
+          register: Mutations::Users::Register
+        }
+      )
+    ]
+  )
   mutation(Types::MutationType)
   query(Types::QueryType)
 
