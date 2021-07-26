@@ -37,5 +37,13 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
         headers: :any,
         methods: [:get, :post, :put, :patch, :delete, :options, :head]
     end
+
+    # Review apps coming from monolith
+    allow do
+      origins /https:\/\/om-monolith-pr-\d+\.herokuapp\.com/
+      resource '*',
+        headers: :any,
+        methods: [:get, :post, :put, :patch, :delete, :options, :head]
+    end
   end
 end
